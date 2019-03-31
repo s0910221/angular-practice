@@ -4,24 +4,26 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChartsComponent } from './charts/charts.component';
 import { TablesComponent } from './tables/tables.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ColorsComponent } from './utilities/colors/colors.component';
+import { BordersComponent } from './utilities/borders/borders.component';
+import { AnimationsComponent } from './utilities/animations/animations.component';
+import { OtherComponent } from './utilities/other/other.component';
 
 const routes: Routes = [
+  { path: '', component: DashboardComponent },
   {
-    path: '',
-    component: DashboardComponent
+    path: 'utilities',
+    children: [
+      { path: '', redirectTo: 'colors', pathMatch: 'full' },
+      { path: 'colors', component: ColorsComponent },
+      { path: 'borders', component: BordersComponent },
+      { path: 'animations', component: AnimationsComponent },
+      { path: 'other', component: OtherComponent },
+    ]
   },
-  {
-    path: 'charts',
-    component: ChartsComponent
-  },
-  {
-    path: 'tables',
-    component: TablesComponent
-  },
-  {
-    path: '**',
-    component: NotFoundComponent
-  }
+  { path: 'charts', component: ChartsComponent },
+  { path: 'tables', component: TablesComponent },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

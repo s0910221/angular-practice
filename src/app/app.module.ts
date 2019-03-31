@@ -7,6 +7,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TablesComponent } from './tables/tables.component';
 import { ChartsComponent } from './charts/charts.component';
+import { ColorsComponent } from './utilities/colors/colors.component';
+import { BordersComponent } from './utilities/borders/borders.component';
+import { AnimationsComponent } from './utilities/animations/animations.component';
+import { OtherComponent } from './utilities/other/other.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { ChartsComponent } from './charts/charts.component';
     NotFoundComponent,
     DashboardComponent,
     TablesComponent,
-    ChartsComponent
+    ChartsComponent,
+    ColorsComponent,
+    BordersComponent,
+    AnimationsComponent,
+    OtherComponent
   ],
   imports: [
     BrowserModule,

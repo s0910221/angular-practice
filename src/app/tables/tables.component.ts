@@ -10,7 +10,7 @@ export class TablesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    $(document).ready(function () {
+    $(document).ready(() => {
       $('#dataTable').DataTable();
     });
   }
