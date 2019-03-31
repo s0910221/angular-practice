@@ -3,19 +3,21 @@
   <!-- Page Heading -->
   <h1 class="h3 mb-1 text-gray-800">Color Utilities</h1>
   <p class="mb-4">Bootstrap's default utility classes can be found on the official <a href="https://getbootstrap.com/docs">Bootstrap
-      Documentation</a> page. The custom utilities below were created to extend this theme past the default utility classes
-    built into Bootstrap's framework.</p>
+      Documentation
+    </a> page. The custom utilities below were created to extend this theme past the default utility classes built into Bootstrap's
+    framework.
+  </p>
 
   <!-- Content Row -->
   <div class="row">
 
     <!-- First Column -->
-    <div class="col-lg-4">
+    <div class="col-lg-4" *ngIf="type === 0 || type === 1">
 
       <!-- Custom Text Color Utilities -->
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">Custom Text Color Utilities</h6>
+          <h6 class="m-0 font-weight-bold text-primary" (click)="goNext()">Custom Text Color Utilities</h6>
         </div>
         <div class="card-body">
           <p class="text-gray-100 p-3 bg-dark m-0">.text-gray-100</p>
@@ -44,12 +46,12 @@
     </div>
 
     <!-- Second Column -->
-    <div class="col-lg-4">
+    <div class="col-lg-4" *ngIf="type === 0 || type === 2">
 
       <!-- Background Gradient Utilities -->
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">Custom Background Gradient Utilities</h6>
+          <h6 class="m-0 font-weight-bold text-primary" (click)="goNext()">Custom Background Gradient Utilities</h6>
         </div>
         <div class="card-body">
           <div class="px-3 py-5 bg-gradient-primary text-white">.bg-gradient-primary</div>
@@ -63,12 +65,12 @@
     </div>
 
     <!-- Third Column -->
-    <div class="col-lg-4">
+    <div class="col-lg-4" *ngIf="type === 0 || type === 3">
 
       <!-- Grayscale Utilities -->
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">Custom Grayscale Background Utilities</h6>
+          <h6 class="m-0 font-weight-bold text-primary" (click)="goNext()">Custom Grayscale Background Utilities</h6>
         </div>
         <div class="card-body">
           <div class="p-3 bg-gray-100">.bg-gray-100</div>

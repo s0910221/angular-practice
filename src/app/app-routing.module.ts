@@ -15,6 +15,7 @@ const routes: Routes = [
     path: 'utilities',
     children: [
       { path: '', redirectTo: 'colors', pathMatch: 'full' },
+      { path: 'colors/:type', component: ColorsComponent },
       { path: 'colors', component: ColorsComponent },
       { path: 'borders', component: BordersComponent },
       { path: 'animations', component: AnimationsComponent },
