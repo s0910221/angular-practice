@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { switchMap } from 'rxjs/operators';
 
 
 interface ApiData {
@@ -29,16 +30,19 @@ export class TablesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.http.get<ApiData[]>('http://www.mocky.io/v2/5c9e523f3000005500ee97cf').subscribe(x => {
-      this.data = x;
-      $(document).ready(() => {
-        $('#dataTable').DataTable();
+    this.route.queryParamMap
+      .pipe(
+        switchMap(params => {
+          this.num = +params.get('num') || 5;
+          return this.http.get<ApiData[]>('http://www.mocky.io/v2/5c9e523f3000005500ee97cf');
+        })
+      )
+      .subscribe(data => {
+        this.data = data;
+        $(document).ready(() => {
+          $('#dataTable').DataTable();
+        });
       });
-    });
-
-    this.route.queryParamMap.subscribe(params => {
-      this.num = +params.get('num') || 5;
-    });
   }
 
 }
