@@ -7,9 +7,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   {
     path: '',
     component: LayoutComponent,
@@ -23,9 +25,9 @@ const routes: Routes = [
       },
       { path: 'charts', component: ChartsComponent },
       { path: 'tables', component: TablesComponent },
-      { path: '**', component: NotFoundComponent }
     ]
   },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
