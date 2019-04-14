@@ -16,17 +16,17 @@
               <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
                   <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name" name="firstName"
-                    [(ngModel)]="account.firstName" #fFirstName="ngModel" [class.error]="fFirstName.invalid && (f.submitted || fFirstName.touched)"
+                    [(ngModel)]="account.firstName" #fFirstName="ngModel" [class.has-error]="fFirstName.invalid && (f.submitted || fFirstName.touched)"
                     required>
                 </div>
                 <div class="col-sm-6">
                   <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name" name="lastName" [(ngModel)]="account.lastName"
-                    #fLastName="ngModel" [class.error]="fLastName.invalid && (f.submitted || fLastName.touched)" required>
+                    #fLastName="ngModel" [class.has-error]="fLastName.invalid && (f.submitted || fLastName.touched)" required>
                 </div>
               </div>
               <div class="form-group">
                 <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" name="email"
-                  [(ngModel)]="account.email" #fEmail="ngModel" [class.error]="fEmail.invalid && (f.submitted || fEmail.dirty)"
+                  [(ngModel)]="account.email" #fEmail="ngModel" [class.has-error]="fEmail.invalid && (f.submitted || fEmail.dirty)"
                   required email>
                 <ng-container *ngIf="fEmail.dirty && fEmail.errors">
                   <ng-container *ngIf="fEmail.hasError('required'); else invalidFormat">
@@ -40,12 +40,13 @@
               <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
                   <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" name="password"
-                    [(ngModel)]="account.password" #fPassword="ngModel" [class.error]="fPassword.invalid && (f.submitted || fPassword.dirty)"
+                    [(ngModel)]="account.password" #fPassword="ngModel" [class.has-error]="fPassword.invalid && (f.submitted || fPassword.dirty)"
                     required>
                 </div>
                 <div class="col-sm-6">
                   <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password" name="repeatPassword"
-                    [(ngModel)]="account.repeatPassword" #fRepeatPassword="ngModel" [class.error]="fRepeatPassword.invalid && (f.submitted || fRepeatPassword.dirty)" [compareEqual]="account.password" [required]="account.password.length > 0">
+                    [(ngModel)]="account.repeatPassword" #fRepeatPassword="ngModel" [class.has-error]="fRepeatPassword.invalid && (f.submitted || fRepeatPassword.dirty)"
+                    [compareEqual]="account.password" [required]="account.password.length > 0">
                 </div>
               </div>
               <input type="submit" class="btn btn-primary btn-user btn-block" value="Register Account" [disabled]="f.invalid">

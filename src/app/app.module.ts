@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CompareValidatorModule } from 'angular-compare-validator';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,7 @@ import { ChartsComponent } from './charts/charts.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { Register2Component } from './register2/register2.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +25,14 @@ import { RegisterComponent } from './register/register.component';
     LayoutComponent,
     LoginComponent,
     RegisterComponent,
+    Register2Component,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     CompareValidatorModule
   ],
   providers: [],
